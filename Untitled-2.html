@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Road Craft | Digital-Marketing Portfolio</title>
+<style>
+/* CSS Variables for Blue Theme */
+
+:root {
+  --navy-dark: #0a1128;
+  --navy-card: #101f42;
+  --navy-surface: #1c2d5a;
+  --blue-accent: #0077ff;
+  --cyan-bright: #00f0ff;
+  --text-light: #e0f2fe;
+  --text-muted: #8ba0c4;
+  --line-color: rgba(0, 240, 255, 0.2);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--navy-dark);color:var(--text-light);font-family:Inter,Arial,sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}
+
+.site-header{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:28px;padding:18px 5vw;background:rgba(10, 17, 40, 0.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line-color)}
+.brand{display:flex;align-items:center;gap:11px;font-size:18px;letter-spacing:.16em}
+.brand-mark{width:34px;height:34px;border:1px solid var(--cyan-bright);border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-weight:700;color:var(--cyan-bright);box-shadow: 0 0 10px rgba(0,240,255,0.3)}
+.site-nav{display:flex;gap:24px;margin:auto;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.site-nav a:hover{color:var(--cyan-bright)}
+.brand-site{border:1px solid var(--cyan-bright);padding:10px 15px;border-radius:999px;font-size:12px;color:var(--cyan-bright);transition:0.3s}
+.brand-site:hover{background:var(--cyan-bright);color:var(--navy-dark)}
+
+.section{padding:110px 7vw}
+.hero{min-height:82vh;display:grid;grid-template-columns:1fr .9fr;align-items:center;gap:7vw}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:11px;color:var(--cyan-bright);margin:0 0 22px}
+.eyebrow span{display:inline-block;width:28px;height:1px;background:var(--cyan-bright);vertical-align:middle;margin-right:8px}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;line-height:.98;margin:0}
+h1{font-size:clamp(58px,9vw,125px);letter-spacing:-.055em}
+h1 em,h2 em{font-style:italic;color:var(--cyan-bright)}
+.hero-intro{max-width:600px;font-size:18px;color:var(--text-muted);margin:28px 0}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.button{display:inline-flex;align-items:center;gap:12px;padding:14px 20px;border-radius:999px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--cyan-bright);cursor:pointer;transition:0.3s}
+.button-primary{background:var(--blue-accent);color:#fff;border-color:var(--blue-accent)}
+.button-primary:hover{background:var(--cyan-bright);color:var(--navy-dark);border-color:var(--cyan-bright)}
+.button:not(.button-primary):hover{background:rgba(0, 240, 255, 0.1)}
+
+.hero-visual{min-height:560px;border-radius:32px;background:radial-gradient(circle at 55% 25%,rgba(0,119,255,.45),transparent 35%),linear-gradient(145deg,#101f42,#030712 62%,#0f2b5c);display:grid;place-items:center;box-shadow:0 30px 70px rgba(0,0,0,.5);border:1px solid var(--line-color)}
+.hero-product{width:58%;aspect-ratio:1/1.15;border-radius:26px;background:linear-gradient(145deg,#1c356e,#0a1936);box-shadow:20px 30px 50px rgba(0,0,0,.5);transform:rotate(-4deg);position:relative;border:1px solid var(--line-color)}
+.hero-product:before{content:"ROAD CRAFT";position:absolute;top:26%;left:0;right:0;text-align:center;font-family:Georgia,serif;font-size:clamp(20px,3.5vw,44px);letter-spacing:.14em;color:var(--text-light)}
+.hero-product:after{content:"ELECTRIC • PERFORMANCE • LUXURY";position:absolute;bottom:18%;left:0;right:0;text-align:center;font-size:9px;letter-spacing:.2em;color:var(--cyan-bright)}
+
+.ticker{overflow:hidden;border-top:1px solid var(--line-color);border-bottom:1px solid var(--line-color);white-space:nowrap;background:rgba(0,119,255,0.05)}
+.ticker-track{display:inline-block;padding:15px 0;font-size:11px;letter-spacing:.18em}
+.ticker-track span{margin:0 16px;color:var(--cyan-bright)}
+
+.section-heading{margin-bottom:55px}
+.section-heading h2{font-size:clamp(42px,6vw,78px);letter-spacing:-.045em}
+.split{display:flex;justify-content:space-between;gap:40px;align-items:end}
+.split>p{max-width:390px;color:var(--text-muted)}
+
+.overview-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:6vw;align-items:center}
+.overview-visual{min-height:430px;border-radius:28px;background:linear-gradient(135deg,#0a1936,#1c3d7a);position:relative;overflow:hidden;border:1px solid var(--line-color)}
+.overview-visual:before{content:"ROAD CRAFT";position:absolute;left:7%;bottom:7%;font-family:Georgia,serif;font-size:clamp(40px,7vw,90px);color:rgba(224,242,254,.15)}
+.overview-visual:after{content:"LUXURY ELECTRIC PERFORMANCE";position:absolute;right:7%;top:8%;color:var(--cyan-bright);font-size:10px;letter-spacing:.2em}
+.lead{font-family:Georgia,serif;font-size:29px;line-height:1.15;color:var(--text-light)}
+.overview-copy p:not(.lead){color:var(--text-muted)}
+
+.brand-facts{border-top:1px solid var(--line-color);margin-top:32px}
+.brand-facts>div{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line-color);gap:20px}
+.brand-facts dt{color:var(--text-muted);font-size:12px;text-transform:uppercase;letter-spacing:.12em}
+.brand-facts dd{margin:0;text-align:right;color:var(--cyan-bright)}
+
+.strategy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.strategy-card{min-height:205px;background:var(--navy-card);border:1px solid var(--line-color);border-radius:22px;padding:26px;position:relative;transition:.25s ease;display:flex;flex-direction:column}
+.strategy-card:hover{transform:translateY(-5px);border-color:var(--cyan-bright);box-shadow:0 18px 35px rgba(0,240,255,.15)}
+.card-index{font-size:10px;letter-spacing:.16em;color:var(--cyan-bright)}
+.strategy-card h3{font-size:30px;margin:25px 0 10px;color:var(--text-light)}
+.strategy-card p{color:var(--text-muted);max-width:430px;margin:0}
+.strategy-card b{position:absolute;right:24px;bottom:20px;color:var(--cyan-bright);font-size:24px}
+
+.process-list{list-style:none;padding:0;margin:0;border-top:1px solid var(--line-color)}
+.process-list li{display:grid;grid-template-columns:70px 1fr 120px;gap:25px;align-items:center;padding:28px 0;border-bottom:1px solid var(--line-color)}
+.process-list li>span{font-family:Georgia,serif;font-size:25px;color:var(--cyan-bright)}
+.process-list h3{font-size:28px;margin-bottom:7px;color:var(--text-light)}
+.process-list p{margin:0;color:var(--text-muted)}
+.process-list small{text-align:right;color:var(--text-muted);letter-spacing:.15em;font-size:9px}
+
+.contact{background:var(--navy-card);color:var(--text-light);display:grid;grid-template-columns:1fr .9fr;gap:7vw;border-radius:32px;padding:60px 5vw;border:1px solid var(--line-color)}
+.contact .eyebrow{color:var(--cyan-bright)}
+.contact h2{font-size:clamp(52px,7vw,92px)}
+.contact-copy>p:not(.eyebrow){color:var(--text-muted);max-width:550px}
+.social-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px}
+.social-links a{color:var(--cyan-bright);border-bottom:1px solid var(--line-color);padding-bottom:5px;transition:0.3s}
+.social-links a:hover{color:#fff;border-color:#fff}
+.contact-form{background:var(--navy-surface);padding:28px;border-radius:24px;border:1px solid var(--line-color)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;margin-bottom:15px}
+label span{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:7px}
+input,textarea{width:100%;border:1px solid var(--line-color);background:var(--navy-dark);color:#fff;border-radius:12px;padding:13px;font:inherit;outline:none;transition:0.3s}
+input:focus,textarea:focus{border-color:var(--cyan-bright);box-shadow:0 0 8px rgba(0,240,255,0.3)}
+.form-note{font-size:11px;color:var(--text-muted)}
+
+.site-footer{padding:50px 7vw 24px;background:#030712;color:var(--text-muted);border-top:1px solid var(--line-color)}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:50px;padding-bottom:45px}
+.footer-desc{color:var(--text-muted);max-width:340px}
+.footer-heading{display:block;text-transform:uppercase;letter-spacing:.16em;font-size:10px;color:var(--cyan-bright);margin-bottom:15px}
+.footer-links{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:14px}
+.footer-links a:hover{color:var(--cyan-bright)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:18px;display:flex;justify-content:space-between;gap:20px;color:var(--text-muted);font-size:11px}
+.footer-bottom-right{display:flex;gap:20px}
+
+@media(max-width:850px){
+  .site-header{padding:15px 5vw}
+  .site-nav{display:none}
+  .brand-site{margin-left:auto}
+  .section{padding:75px 6vw}
+  .hero,.overview-grid,.contact{grid-template-columns:1fr}
+  .hero{min-height:auto;padding-top:70px}
+  .hero-visual{min-height:430px}
+  .split{display:block}
+  .strategy-grid{grid-template-columns:1fr}
+  .process-list li{grid-template-columns:50px 1fr}
+  .process-list small{display:none}
+  .field-row{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  h1{font-size:58px}
+  .hero-visual{min-height:340px}
+  .brand-site{font-size:10px;padding:8px 10px}
+  .footer-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <a class="brand" href="#home"><span class="brand-mark">R</span><strong>ROAD CRAFT</strong></a>
+  <nav class="site-nav">
+    <a href="#overview">Overview</a>
+    <a href="#work">Portfolio</a>
+    <a href="#approach">Approach</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="brand-site" href="https://roadcraftevpd.wixsite.com/my-site-2" target="_blank">Visit Website ↗</a>
+</header>
+
+<main id="main">
+  <section class="hero section" id="home">
+    <div>
+      <p class="eyebrow"><span></span> Road Craft · Digital Marketing Portfolio</p>
+      <h1>Driven performance.<br><em>Precision</em><br>marketing.</h1>
+      <p class="hero-intro">A digital marketing portfolio for <strong>Road Craft</strong> — unifying website experience, SEO strategy, Google Ads, Meta campaigns, email marketing, and social media branding.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#work">Explore the work ↓</a>
+        <a class="button" href="https://roadcraftevpd.wixsite.com/my-site-2" target="_blank">Open Website ↗</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-product"></div>
+    </div>
+  </section>
+
+  <div class="ticker">
+    <center><span>ELECTRIC MOBILITY</span> ✦ <span>LUXURY PERFORMANCE</span> ✦ <span>SEO STRATEGY</span> ✦ <span>GOOGLE ADS</span> ✦ <span>META ADS</span> ✦ <span>EMAIL MARKETING</span> ✦ <span>BRAND STRATEGY</span> ✦
+  </center></div>
+
+  <section class="overview section" id="overview">
+    <div class="section-heading">
+      <p class="eyebrow"><span></span> 01 · Brand Overview</p>
+      <h2>Where electric performance<br><em>meets precision design.</em></h2>
+    </div>
+    <div class="overview-grid">
+      <div class="overview-visual"></div>
+      <div class="overview-copy">
+        <p class="lead">Road Craft is a luxury electric vehicle and digital experience concept engineered for modern performance.</p>
+        <p>This portfolio brings together the complete brand journey — from website design and digital strategy to performance marketing campaigns on GitHub.</p>
+        <dl class="brand-facts">
+          <div><dt>Brand Name</dt><dd>Road Craft</dd></div>
+          <div><dt>Positioning</dt><dd>Luxury EV & Performance Mobility</dd></div>
+          <div><dt>Website</dt><dd>Wix Site</dd></div>
+          <div><dt>GitHub Profile</dt><dd>tarunmanghani2024-coder</dd></div>
+          <div><dt>Tagline</dt><dd>Crafting the Future of Mobility.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="work section" id="work">
+    <div class="section-heading">
+      <p class="eyebrow"><span></span> 02 · Portfolio Library</p>
+      <h2>Projects, campaigns.<br><em>One brand.</em></h2>
+    </div>
+    <div class="strategy-grid">
+      <a class="strategy-card" href="https://roadcraftevpd.wixsite.com/my-site-2" target="_blank">
+        <span class="card-index">01 / WEB</span>
+        <h3>Road Craft Website</h3>
+        <p>Explore the live Road Craft website built on Wix — featuring luxury brand storytelling and digital presentation.</p>
+        <b>↗</b>
+      </a>
+      <a class="strategy-card" href="https://github.com/tarunmanghani2024-coder/Digital-Marketing-SEO-/blob/main/Tarun%20manghani%20digital%20marketing%20ass%202_choladeck.pptx" target="_blank">
+        <span class="card-index">02 / SEARCH</span>
+        <h3>SEO Strategy</h3>
+        <p>Keyword research, technical SEO, content structuring, and search visibility plans on GitHub.</p>
+        <b>↗</b>
+      </a>
+      <a class="strategy-card" href="https://github.com/tarunmanghani2024-coder/Digital-Marketing-Google-Ads/blob/main/Google%20Ads%20%5BAutosaved%5D.pdf" target="_blank">
+        <span class="card-index">03 / PAID SEARCH</span>
+        <h3>Google Ads Campaign</h3>
+        <p>Targeted search structure, ad copy, lead funnels, budget allocation, and KPI strategies.</p>
+        <b>↗</b>
+      </a>
+      <a class="strategy-card" href="https://github.com/tarunmanghani2024-coder/Digital-Marketing-meta-ads/blob/main/ASSIGNMENT%20META%20ADS.pdf" target="_blank">
+        <span class="card-index">04 / PAID SOCIAL</span>
+        <h3>Meta Ads Campaign</h3>
+        <p>Creative strategy, audience profiling, placement optimization, and conversion campaign design.</p>
+        <b>↗</b>
+      </a>
+      <a class="strategy-card" href="https://github.com/tarunmanghani2024-coder/Digital-Marketing-Email/blob/main/Email%20Marketing%20Campaign.pdf" target="_blank">
+        <span class="card-index">05 / LIFECYCLE</span>
+        <h3>Email Marketing</h3>
+        <p>Automated lifecycle campaigns, launch announcements, and customer retention flows.</p>
+        <b>↗</b>
+      </a>
+      <a class="strategy-card" href="https://github.com/tarunmanghani2024-coder" target="_blank">
+        <span class="card-index">06 / CODE & REPOS</span>
+        <h3>GitHub Repositories</h3>
+        <p>Access the source code, digital marketing documentations, and projects on GitHub.</p>
+        <b>↗</b>
+      </a>
+    </div>
+  </section>
+
+  <section class="approach section" id="approach">
+    <div class="section-heading">
+      <p class="eyebrow"><span></span> 03 · Brand Approach</p>
+      <h2>From concept<br>to <em>digital experience.</em></h2>
+    </div>
+    <ol class="process-list">
+      <li>
+        <span>01</span>
+        <div>
+          <h3>Define the Identity</h3>
+          <p>Establish a premium digital footprint across website development, content design, and brand presentation.</p>
+        </div>
+      </li>
+      <li>
+        <span>02</span>
+        <div>
+          <h3>Design the User Experience</h3>
+          <p>Build an intuitive digital journey that makes the brand easy to explore and convert.</p>
+        </div>
+      </li>
+      <li>
+        <span>03</span>
+        <div>
+          <h3>Connect Marketing Channels</h3>
+          <p>Unify SEO, Google Ads, Meta campaigns, and email marketing around a central growth strategy.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="contact section" id="contact">
+    <div>
+      <p class="eyebrow"><span></span> 04 · Connect with Road Craft</p>
+      <h2>Explore the<br><em>experience.</em></h2>
+      <p>Visit the Road Craft website or explore the projects and repositories on GitHub to see the latest marketing and web work.</p>
+    </div>
+    <form class="contact-form" onsubmit="return false;">
+      <div class="field-row">
+        <label><span>Name</span><input type="text" placeholder="Your Name" required></label>
+        <label><span>Email</span><input type="email" placeholder="you@gmail.com" required></label>
+      </div>
+      <label><span>Message</span><textarea rows="4" placeholder="Tell us about your enquiry..." required></textarea></label>
+      <button class="button button-primary" type="submit">Send enquiry ↗</button>
+    </form>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div>
+      <a class="brand" href="#home"><span class="brand-mark">R</span><strong>ROAD CRAFT</strong></a>
+      <p>Luxury electric performance, digital marketing strategies, and creative web experiences.</p>
+    </div>
+    <div>
+      <span class="footer-heading">Quick Links</span>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#work">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-heading">Connect</span>
+      <ul class="footer-links">
+        <li><a href="https://github.com/tarunmanghani2024-coder" target="_blank">GitHub Profile ↗</a></li>
+        <li><a href="https://roadcraftevpd.wixsite.com/my-site-2" target="_blank">Road Craft Website ↗</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 Road Craft. All rights reserved.</div>
+    <div><a href="#top">Back to top ↑</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
